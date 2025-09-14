@@ -1,0 +1,182 @@
+.login {
+    background-color: #121011;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+    gap: 30px;
+    position: relative;
+}
+
+.genre {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.login h1 {
+    color: white;
+}
+
+.container {
+    width: 98vw;
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container img{
+    position: absolute;
+}
+
+.genres {
+    position: absolute;
+    color: white;
+    z-index: 1;
+    display: flex;
+    width: 300px;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+
+.genres span {
+    width: 90px;
+    height: 25px;
+    border: 2px solid white;
+    border-radius: 11px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.selected {
+    color: #eb2f3d;
+    background-color: #fff;
+    transition: all 0.2s ease-in-out;
+}
+
+
+.skip {
+    position: absolute;
+    right: 40px;
+    color: white;
+    top: 40px;
+    cursor: pointer;
+}
+
+.next {
+    background-color: #eb2f3d;
+  color: #fff;
+  width: 5.0em;
+  height: 1.9em;
+  border: #00000000 0.2em solid;
+  border-radius: 11px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  transition: all 0.2s ease;
+}
+
+.next:hover {
+    width: 4.8em;
+    /* height: 2.1em; */
+    box-sizing: border-box;
+    box-shadow: #eb2f3d;
+    font-size: 1rem;
+}
+
+/* Sign in  */
+
+.signIn {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    width: 24vw;
+    height: 60vh;
+    border: 1px solid white;
+    border-radius: 11px;
+    padding: 12px;
+    position: relative;
+    color: white;
+}
+
+.fPass {
+    position: relative;
+    align-self: flex-end;
+    font-size: 14px;
+    font-weight: 100;
+    cursor: pointer;
+}
+
+.input {
+    width: 95%;
+    height: 40px;
+    border-radius: 11px;
+    padding-left: 10px;
+    border: none;
+    border: 1px solid white;
+    background-color: #121011;
+    color: white;
+    
+}
+
+.btn-sin {
+    position: relative; 
+    width: 60%;
+    align-self: center;
+    height: 34px;
+    font-size: 16px;
+    font-weight: 100;
+    background-color: #eb2f3d;
+    border: none;
+    border-radius: 11px;
+    color: white;
+    cursor: pointer;
+}
+
+.or {
+    display: flex;
+    position: relative;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+}
+.line {
+    height: 1px;
+    background-color: antiquewhite;
+    position: relative;
+    width: 45%;
+}
+.otherWay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 18px;
+}
+
+.icons img.white{
+    width: 28;
+    height: 25px;
+    filter: brightness(0) invert(1);
+}
+
+.icons:hover {
+    cursor: pointer;
+}
+
+.signUp-l {
+    font-size: 14px;
+    font-weight: 100;
+}
+.signUp-l:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.none {
+    display: none;
+}
