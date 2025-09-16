@@ -1,0 +1,16 @@
+.home {
+    position: relative;
+    width: 100%;
+    display: flex;
+    gap: 10px;
+}
+.sec-1 {
+    width: 10%;
+    border: 2px solid black;
+    height: 100vh;
+    position:sticky;
+}
+.sec-2 {
+    width: 88%;
+    height: auto;
+}

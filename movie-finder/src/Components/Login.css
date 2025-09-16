@@ -95,7 +95,7 @@
     flex-direction: column;
     gap: 14px;
     width: 24vw;
-    height: 60vh;
+    height: 65vh;
     border: 1px solid white;
     border-radius: 11px;
     padding: 12px;
@@ -179,4 +179,12 @@
 
 .none {
     display: none;
+}
+
+.show {
+    color: red;
+    font-size: 12px;
+    font-weight: 100;
+
+    left: 20px;
 }
