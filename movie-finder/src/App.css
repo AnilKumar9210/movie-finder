@@ -2,14 +2,38 @@
 body {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  height: 100%;
   font-family: "Host Grotesk", sans-serif;
+  overflow-x:hidden ;
+  overflow-y: auto;
 }
 .App {
   width: 100%;
-  height: 100vh;
+  height: 100%;
+}
+
+.App {
+  background-color: black;
+  color: #ffffff;
 }
 .center {
   display: grid;
-  grid-template-columns: 10% 90%;
+  grid-template-columns: 8% 92%;
+  /* position: sticky; */
+  left:0;
+}
+
+.main-content {
+  /* margin-left: 100px; */
+  height: 100vh;
+  overflow: scroll;
+}
+
+.App::-webkit-scrollbar {
+  width: 0;
+}
+
+.center:first-child {
+  position: fixed;
+  height: 100vh;
 }

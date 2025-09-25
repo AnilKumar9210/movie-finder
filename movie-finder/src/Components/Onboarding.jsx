@@ -1,10 +1,17 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
 import { TypeAnimation } from "react-type-animation";
 import { useNavigate } from "react-router-dom";
 import "./Onboarding.css";
+import { AppContext } from "../Context/Context";
 
 const Onboarding = () => {
   const navigate = useNavigate ();
+  const {login} = useContext (AppContext);
+  useEffect (()=> {
+    if (login) {
+      navigate ('/home')
+    }
+  },[])
 
   const handleNavigate = ()=> {
     navigate('/login')

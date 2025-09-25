@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './login.css'
 import bg_poster from '../Assets/bg_poster.jpg'
 import google from '../assets/google.png'
@@ -20,6 +20,18 @@ const Login = () => {
     const [vEmail,setVemail] = useState (false)
     const [vPass,setVpass] = useState (false)
     const navigate = useNavigate ();
+
+    useEffect (()=> {
+      localStorage.setItem ('login',Login);
+    },[Login])
+
+    useEffect (()=> {
+      const savedLogin = localStorage.getItem ('login');
+      if (savedLogin) {
+        navigate ('/home')
+      }
+      setLogin (savedLogin);
+    },[]);
 
     const toggleClass = (id)=> {
         setActive ((prev)=> ({

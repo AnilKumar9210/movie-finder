@@ -9,17 +9,19 @@ import './App.css'
 import LeftSec from './Components/LeftSec'
 import { AppContext } from './Context/Context'
 import { useContext } from 'react'
+import Search from './Components/Search'
 function App() {
   const { login } = useContext(AppContext);
   useEffect (()=> {},[login])
   return (
-    <div className={`App ${!login?' ':'center'}`}>
+    <div className={`App ${!login?'':'center'}`}>
       <LeftSec/>
-      <div>
+      <div className='main-content' style={{height:100+'vh',background:'black'}}>
       <Routes>
         <Route path='/' element={<Onboarding/>}/>
         <Route path='/login' element={<Login/>}/>
         <Route path='/home' element={<Home/>}/>
+        <Route path='/search' element={<Search/>}/>
       </Routes>
       </div>
     </div>
