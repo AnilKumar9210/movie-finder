@@ -10,6 +10,7 @@ import LeftSec from './Components/LeftSec'
 import { AppContext } from './Context/Context'
 import { useContext } from 'react'
 import Search from './Components/Search'
+import Profile from './Components/Profile'
 function App() {
   const { login } = useContext(AppContext);
   useEffect (()=> {},[login])
@@ -22,6 +23,7 @@ function App() {
         <Route path='/login' element={<Login/>}/>
         <Route path='/home' element={<Home/>}/>
         <Route path='/search' element={<Search/>}/>
+        <Route path='/profile' element={<Profile/>}/>
       </Routes>
       </div>
     </div>

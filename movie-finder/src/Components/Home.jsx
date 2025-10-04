@@ -4,14 +4,18 @@ import LeftSec from "./LeftSec";
 import { AppContext } from "../Context/Context";
 import retro from "../assets/backgrounds/retro.jpg";
 import bgImages from '../index.js'
+import Footer from "./Footer.jsx";
+import Movie from "./Movie.jsx";
 
 const Home = () => {
-  const [activeClass, setActiveClass] = useState(0);
+  const [open, setOpen] = useState(false);
   const countBg = bgImages.length;
   const [itemActive,setItemActive] = useState (0);
   const [tActive,setTActive] = useState (0);
   const bgRefs = useRef ([])
   const tRefs = useRef ([])
+  const {result,setResult} = useContext (AppContext)
+
 
   const handleThumbnail = (index)=> {
     tRefs.current[index].classList.add ('active');
@@ -44,6 +48,23 @@ const Home = () => {
     setItemActive (nextActive)
   }
 
+  const handleAction = async(name)=> {
+    if (result.length > 0) {
+      setResult ([]);
+      result.length = 0
+    }
+    try {
+      const res = await fetch (`http://www.omdbapi.com/?t=${name}&apikey=817695c5`);
+      const data = await res.json ();
+      setResult ((prev)=> ([...prev,data]));
+
+      console.log (result,data);
+      setOpen (true);
+    } catch (e) {
+      console.error ('Error fetching data',e);
+    }
+  }
+
   return (
     <div className="home">
       <div className="slider">
@@ -57,10 +78,7 @@ const Home = () => {
             <div className="content">
               <h2>{src[1]}</h2>
               <p>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rem
-                odit ea quo soluta distinctio facilis, aliquid totam sapiente
-                sunt itaque. Eligendi ex veritatis pariatur, error voluptas
-                consequatur sapiente deserunt quos non minima.
+                {src[2]}
               </p>
             </div>
           </div>))}
@@ -126,10 +144,10 @@ const Home = () => {
 
       <div className="action">
         <div className="action-title" style={{color:"white"}}>
-          Action
+          New Releases
         </div>
         <div className="cat-content">
-        {bgImages.map ((src , i)=> (<div className="item">
+        {bgImages.map ((src , i)=> (<div className="item" onClick={()=>{handleAction (src[1])}}>
           <div className="cover">
           <img src={src[0]} alt="" />
           </div>
@@ -143,6 +161,9 @@ const Home = () => {
       </div>
 
     </div>
+    <Movie isOpen={open} onClose={() => setOpen(false)} />
+    <div className="line"></div>
+    <Footer/>
     </div>
 
   );

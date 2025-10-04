@@ -1,24 +1,81 @@
-import React, { useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import "./Search.css";
+import bgImages from '../index.js'
+import Footer from "./Footer.jsx";
+import { AppContext } from "../Context/Context.jsx";
+import Movie from "./Movie.jsx";
 
 const Search = () => {
-  const [recent, setRecent] = useState([])
-  const [search,setSearch] = useState ("")
+  const [recent, setRecent] = useState([]);
+  // const [search,setSearch] = useState ("");
+  const [open,setOpen] = useState (false);
+  const [movie,setMovie] = useState ('');
+  const [found,setFound] = useState (false);
+  const {result,setResult,search,setSearch} = useContext (AppContext)
 
-  const handleKeyDown = (e)=> {
+  // useEffect (()=> {},[movie]) 
+
+
+ 
+
+  const handleKeyDown = async(e)=> {
     if(e.key === 'Enter') {
         console.log(search);
         let check = recent.find (val=> val===search);
         !check ? setRecent ((prev)=> [...prev,search]) : null;
-        setSearch ("");
+
+        console.log(bgImages.filter ((val)=> val[1].toLowerCase().includes (search.toLowerCase())));
+        
+      try {
+      const res = await fetch (`http://www.omdbapi.com/?t=${search}&apikey=817695c5`);
+      const data = await res.json ();
+      setResult ((prev)=> ([...prev,data]));
+      setFound (true);
+      // setResult (data);
+      console.log (result,data);
+    } catch (e) {
+      console.error ('Error fetching data',e);
     }
+        setSearch ("");
+      }
+    }
+    
+    const handleSearch = async(e)=> {
+      setResult ([])
+      setSearch (e.target.value);
+      
+      // setResult (bgImages.filter ((val)=> val[1].toLowerCase().replaceAll (" ", "").includes (search.toLowerCase().replaceAll (" ", "").trimEnd ())));
+
   }
 
   const handleClear = (index)=> {
     let newVals = recent.filter ((val,i)=> i!=index);
     setRecent (newVals)
   }
+
+  const getRuntime=(runtime)=> {
+    let time = runtime.split (" ");
+    return ` ${Math.floor (time[0]/60)}hrs ${time[0]%60}mins`
+  }
+
+  const handleTrending = async(name)=> {
+    if (result.length > 0) {
+      setResult ([]);
+      result.length = 0
+    }
+    try {
+      const res = await fetch (`http://www.omdbapi.com/?t=${name}&apikey=817695c5`);
+      const data = await res.json ();
+      setResult ((prev)=> ([...prev,data]));
+
+      console.log (result,data);
+      setOpen (true);
+    } catch (e) {
+      console.error ('Error fetching data',e);
+    }
+  }
   
+
   return (
     <div className="search">
       <div className="search-box">
@@ -41,11 +98,12 @@ const Search = () => {
           </svg>
         </div>
         <input type="text" 
-        onChange={(e)=>{setSearch(e.target.value)}}
+        onChange={(e)=>{handleSearch (e)}}
          onKeyDown={handleKeyDown} 
          placeholder="Movies Shows and more..."
          value={search}/>
       </div>
+
       <div className="recent">
         {recent.map ((val,i)=> (<div className="recent-item">
           <div className="clock">
@@ -89,6 +147,44 @@ const Search = () => {
           </div>
         </div>))}
       </div>
+
+      {found && <div className="result">
+        {result.map ((movie)=> (<div className="result-item" onClick={()=>setOpen (true)}>
+          <img src={movie.Poster} alt="" />
+          <div className="info">
+            <h3>{movie.Title}</h3>
+            <ul>
+              <li>{movie.Released}</li>
+              <li>{getRuntime (movie.Runtime)}</li>
+              <li>U/A 13+</li>
+            </ul>
+            <p>{movie.Plot}</p>
+          </div>
+        </div>))}
+      </div>}
+      <div className="trending" >
+        <div className="action">
+                <div className="action-title" style={{color:"white"}} >
+                  Trending
+                </div>
+                <div className="cat-content">
+                {bgImages.map ((src , i)=> (<div className="item" onClick={()=>{handleTrending (src[1])}}>
+                  <div className="cover">
+                  <img src={src[0]} alt="" />
+                  </div>
+                  <div className="title">
+                    <span>{src[1]}</span>
+                  </div>
+                  <div className="extra-content">
+                    <p>{src[2]}</p>
+                  </div>
+                </div>))}
+              </div>
+        
+            </div></div>
+            <Movie isOpen={open} onClose={() => setOpen(false)} />
+            <div className="line"></div>
+            <Footer/>
     </div>
   );
 };

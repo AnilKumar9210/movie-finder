@@ -34,7 +34,7 @@ const LeftSec = () => {
         <img className='white' src={categories} alt="" />
         <img className='white' src={television} alt="" />
         <img className='white' src={love} alt="" />
-        <img className='white' src={user} alt="" />
+        <img className='white' src={user} alt="" onClick={()=>navigate ('./profile')} />
       </div>
       <button class="end">
   
