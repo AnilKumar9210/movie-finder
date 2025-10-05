@@ -43,9 +43,6 @@ const Search = () => {
     const handleSearch = async(e)=> {
       setResult ([])
       setSearch (e.target.value);
-      
-      // setResult (bgImages.filter ((val)=> val[1].toLowerCase().replaceAll (" ", "").includes (search.toLowerCase().replaceAll (" ", "").trimEnd ())));
-
   }
 
   const handleClear = (index)=> {
