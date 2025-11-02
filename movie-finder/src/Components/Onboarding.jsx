@@ -14,7 +14,7 @@ const Onboarding = () => {
   },[login])
 
   const handleNavigate = ()=> {
-    setLogin (true);  
+    // setLogin (prev=>!prev);  
     navigate('/home')
   }
 
