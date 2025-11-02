@@ -19,7 +19,7 @@ function App() {
       <LeftSec/>
       <div className='main-content' style={{height:100+'vh',background:'black'}}>
       <Routes>
-        <Route path='/' element={<Onboarding/>}/>
+        <Route path='/movie-finder' element={<Onboarding/>}/>
         <Route path='/login' element={<Login/>}/>
         <Route path='/home' element={<Home/>}/>
         <Route path='/search' element={<Search/>}/>
