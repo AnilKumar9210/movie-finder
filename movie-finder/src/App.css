@@ -37,3 +37,14 @@ body {
   position: fixed;
   height: 100vh;
 }
+
+@media (max-width: 768px) {
+  .center {
+    display: flex;
+    flex-direction: column;
+  }
+  .main-content {
+    margin-left: 0;
+    order: 1;
+  }
+}

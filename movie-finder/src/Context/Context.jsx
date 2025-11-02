@@ -3,7 +3,7 @@ import React, { createContext, useEffect, useState } from "react";
 export const AppContext = createContext();
 
 export const AppProvider = ({ children }) => {
-  const [login, setLogin] = useState(localStorage.getItem ('login'));
+  const [login, setLogin] = useState(false);
 
   const [result,setResult] = useState ([]);
   const [search,setSearch] = useState ("")

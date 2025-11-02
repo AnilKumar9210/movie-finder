@@ -95,5 +95,32 @@
   margin: 4px;
   padding-left: 16px;
 }
-.result-item .info ul li {
+
+
+@media (max-width: 768px) {
+  .search {
+    width: 95%;
+  }
+
+  .recent {
+    width: 95%;
+  }
+  .result-item {
+    flex-direction: column;
+    height: auto;
+    align-items: flex-start;
+  }
+
+  .search-box {
+    height: 50px;
+  }
+
+  .search-box:first-child div {
+    padding-left: 8px;
+  }
+
+  .result-item img {
+    width: 100%;
+    height: auto;
+  }
 }

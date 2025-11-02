@@ -307,3 +307,75 @@
     background-color: #333;
     margin: 20px 0;
 }
+
+@media (max-width: 768px) {
+    .slider {
+        height: 70vh;
+    }
+    .slider .list .item .content h2 {
+        font-size: 40px;
+        margin-bottom: 10px;
+        letter-spacing: 5px;
+    }
+
+    .slider .list .item .content {
+        width: 300px;
+        left: 5%;
+        bottom: 28%;
+    }
+
+    .arrows {
+        top: 20%;
+        right: 20px;
+    }
+
+    .arrows div {
+        width: 40px;
+        height: 40px;
+        font-size: 24px;
+    }
+
+    
+
+    .thumbnail {
+        height: 150px;
+        bottom: 20px;
+    }
+
+    .thumbnail .item {
+        width: 100px;
+        height: 140px;
+    }
+
+    .title span {
+        font-size: 1rem;
+    }
+
+    .rights {
+        font-size: 12px;
+        text-align: center;
+        padding: 10px;
+    }
+
+    .action {
+        height: auto;
+        padding: 5px;
+    }
+
+    .action .item {
+        width: 120px;
+        height: 170px;
+    }
+
+    .cover {
+        height: 150px;
+        width: 120px;
+    }
+
+    .action .item .extra-content {
+        font-size: 0.6rem;
+    }
+    .action .item:hover {
+        transform:  scale(1.2);
+    }
+}   

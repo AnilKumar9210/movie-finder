@@ -101,7 +101,7 @@ const Search = () => {
          value={search}/>
       </div>
 
-      <div className="recent">
+      <div className={recent.length > 0 ? "recent" : "none"}>
         {recent.map ((val,i)=> (<div className="recent-item">
           <div className="clock">
             <svg

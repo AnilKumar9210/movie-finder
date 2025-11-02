@@ -2,7 +2,7 @@ import React from "react";
 import "./Footer.css";
 
 const Footer = () => {
-  return (
+  return (<>
     <div className="footer">
       <div>
         <h3>Company</h3>
@@ -10,7 +10,7 @@ const Footer = () => {
         <span>careers</span>
       </div>
       <div>
-        <h3>view website in </h3>
+        <h3>view in </h3>
         <span>English</span>
       </div>
       <div>
@@ -19,7 +19,7 @@ const Footer = () => {
         <span>share feedback</span>
       </div>
       <div>
-        <h3>connect with us</h3>
+        <h3>connect</h3>
         <span style={{lineHeight:0}}>
           <svg
             class="w-6 h-6 text-gray-800 dark:text-white"
@@ -55,10 +55,11 @@ const Footer = () => {
           </svg>
         </span>
       </div>
+    </div>
       <div className="rights">
         @2025 All Rights Reserved Terms of use Privacy Policy FAQ
       </div>
-    </div>
+    </>
   );
 };
 

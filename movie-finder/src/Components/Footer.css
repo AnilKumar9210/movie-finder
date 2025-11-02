@@ -35,3 +35,20 @@
 .footer div span svg {
     cursor: pointer;
 }
+
+@media (max-width: 768px) {
+    .footer {
+        /* grid-template-columns: 1fr 1fr; */
+        height: auto;
+    }
+    .footer div h3 {
+        margin: 0;
+        font-size: 18px;
+        /* line-height: 4; */
+    }
+
+    .footer div span {
+        line-height: 3;
+        
+    }
+}

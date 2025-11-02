@@ -6,15 +6,16 @@ import { AppContext } from "../Context/Context";
 
 const Onboarding = () => {
   const navigate = useNavigate ();
-  const {login} = useContext (AppContext);
+  const { login,setLogin } = useContext (AppContext);
   useEffect (()=> {
     if (login) {
       navigate ('/home')
     }
-  },[])
+  },[login])
 
   const handleNavigate = ()=> {
-    navigate('/login')
+    setLogin (true);  
+    navigate('/home')
   }
 
   return (
