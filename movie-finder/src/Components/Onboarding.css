@@ -60,6 +60,7 @@
 
     .onboarding-container span {
         font-size: 14px;
+        height: 80px;
         width: 80%;
         text-align: center;
     }
