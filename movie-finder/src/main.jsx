@@ -8,7 +8,7 @@ import { AppProvider } from './Context/Context.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename='/movie-finder'>
     <ErrorBoundary fallback={<div>Something went wrong</div>}>
       <AppProvider>
         <App />
