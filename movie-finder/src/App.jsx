@@ -14,8 +14,7 @@ import Profile from './Components/Profile'
 function App() {
   const { login } = useContext(AppContext);
   useEffect (()=> {},[login])
-  return (
-    <div className={`App ${!login?'':'center'}`}>
+  return (<>{!login?<Onboarding/>:<div className={`App ${!login?'':'center'}`}>
       <LeftSec/>
       <div className='main-content' style={{height:100+'vh',background:'black'}}>
       <Routes>
@@ -26,8 +25,8 @@ function App() {
         <Route path='/profile' element={<Profile/>}/>
       </Routes>
       </div>
-    </div>
-  )
+    </div>}
+  </>)
 }
 
 export default App

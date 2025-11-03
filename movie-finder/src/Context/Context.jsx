@@ -3,10 +3,10 @@ import React, { createContext, useEffect, useState } from "react";
 export const AppContext = createContext();
 
 export const AppProvider = ({ children }) => {
-  const [login, setLogin] = useState(false);
+  const [login, setLogin] = useState (false);
 
   const [result,setResult] = useState ([]);
-  const [search,setSearch] = useState ("")
+  const [search,setSearch] = useState ("");
 
   
 
@@ -18,6 +18,7 @@ export const AppProvider = ({ children }) => {
         setResult,
         search,
         setSearch,
+        setLogin,
       }}
     >
       {children}
