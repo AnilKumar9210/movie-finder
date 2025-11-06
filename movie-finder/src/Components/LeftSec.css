@@ -6,6 +6,9 @@
   display: block;
   height: 100vh;
   width: 100px;
+  position: fixed;
+  z-index: 1000;
+
   /* position: fixed; */
   background-color: black;
   /* border: 2px solid white; */
@@ -126,14 +129,15 @@
 
 @media (max-width: 768px) {
   .leftSec {
-    width: 92%;
+    width: 90%;
     height: 95px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     padding: 0 10px;
-    order: 2;
+    width: 93%;
+    bottom: 0;
   }
 
   .icon {

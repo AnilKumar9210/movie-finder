@@ -65,7 +65,8 @@ const Home = () => {
     }
   }
 
-  return (
+  return (<>
+  <LeftSec/>
     <div className="home">
       <div className="slider">
         <div className="list">
@@ -164,7 +165,7 @@ const Home = () => {
     <Movie isOpen={open} onClose={() => setOpen(false)} />
     <div className="line"></div>
     <Footer/>
-    </div>
+    </div></>
 
   );
 };

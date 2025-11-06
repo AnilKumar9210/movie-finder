@@ -14,8 +14,7 @@ import Profile from './Components/Profile'
 function App() {
   const { login } = useContext(AppContext);
   useEffect (()=> {},[login])
-  return (<>{!login?<Onboarding/>:<div className={`App ${!login?'':'center'}`}>
-      <LeftSec/>
+  return (<>{!login?<Onboarding/>:
       <div className='main-content' style={{height:100+'vh',background:'black'}}>
       <Routes>
         <Route path='/' element={<Onboarding/>}/>
@@ -24,8 +23,7 @@ function App() {
         <Route path='/search' element={<Search/>}/>
         <Route path='/profile' element={<Profile/>}/>
       </Routes>
-      </div>
-    </div>}
+      </div>}
   </>)
 }
 
