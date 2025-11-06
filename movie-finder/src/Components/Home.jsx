@@ -147,7 +147,7 @@ const Home = () => {
           New Releases
         </div>
         <div className="cat-content">
-        {bgImages.map ((src , i)=> (<div className="item" onClick={()=>{handleAction (src[1])}}>
+        {bgImages.map ((src , i)=> (<div className="item" key={i} onClick={()=>{handleAction (src[1])}}>
           <div className="cover">
           <img src={src[0]} alt="" />
           </div>

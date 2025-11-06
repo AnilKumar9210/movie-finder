@@ -42,9 +42,14 @@ body {
   .center {
     display: flex;
     flex-direction: column;
+    grid-template-columns: 12% 80%;
   }
   .main-content {
     margin-left: 0;
     order: 1;
+  }
+
+  .center:first-child {
+    height: 100%;
   }
 }

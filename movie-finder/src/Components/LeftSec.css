@@ -127,7 +127,7 @@
 @media (max-width: 768px) {
   .leftSec {
     width: 92%;
-    height: 60px;
+    height: 95px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;

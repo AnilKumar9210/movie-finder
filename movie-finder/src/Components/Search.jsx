@@ -102,7 +102,7 @@ const Search = () => {
       </div>
 
       <div className={recent.length > 0 ? "recent" : "none"}>
-        {recent.map ((val,i)=> (<div className="recent-item">
+        {recent.map ((val,i)=> (<div className="recent-item" key={i}>
           <div className="clock">
             <svg
               class="w-6 h-6 text-gray-800 dark:text-white"
@@ -122,7 +122,13 @@ const Search = () => {
               />
             </svg>
           </div>
-          <span onClick={()=> {setSearch (val)}}>{val}</span>
+          <span onClick={()=> {
+            setSearch (val);
+            let newVals = recent.filter(i=> {
+              if (i !== val);
+            })
+            setRecent(newVals)
+            }}>{val}</span>
           <div className="clear" onClick={()=>{handleClear (i)}}>
             <svg
               class="w-6 h-6 text-gray-800 dark:text-white"
@@ -146,7 +152,7 @@ const Search = () => {
       </div>
 
       {found && <div className="result">
-        {result.map ((movie)=> (<div className="result-item" onClick={()=>setOpen (true)}>
+        {result.map ((movie,i)=> (<div className="result-item" key={i} onClick={()=>setOpen (true)}>
           <img src={movie.Poster} alt="" />
           <div className="info">
             <h3>{movie.Title}</h3>
