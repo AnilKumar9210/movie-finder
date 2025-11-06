@@ -16,11 +16,11 @@ const LeftSec = () => {
   
 
     const handleSearch = ()=> {
-      navigate ('./search')
+      navigate ('../search')
     }
 
     const handleHome = ()=> {
-      navigate ('./home')
+      navigate ('../home')
     }
 
   return (
