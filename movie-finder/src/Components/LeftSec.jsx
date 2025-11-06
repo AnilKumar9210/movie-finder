@@ -15,13 +15,6 @@ const LeftSec = () => {
   const navigate = useNavigate ()
   
 
-    const handleSearch = ()=> {
-      navigate ('./search')
-    }
-
-    const handleHome = ()=> {
-      navigate ('./home')
-    }
 
   return (
     <div className='leftSec'>
@@ -29,12 +22,12 @@ const LeftSec = () => {
         <img src={media_player} alt="" style={{width:50, height:60}} />
         </div>
       <div className="icon">
-        <img className='white' src={home} alt=""  onClick={handleHome}/>
-        <img className='white' src={search} alt="" onClick={handleSearch} />
+        <img className='white' src={home} alt=""  onClick={()=>(navigate('/home'))}/>
+        <img className='white' src={search} alt="" onClick={()=>(navigate('/search'))} />
         <img className='white' src={categories} alt="" />
         <img className='white' src={television} alt="" />
         <img className='white' src={love} alt="" />
-        <img className='white' src={user} alt="" onClick={()=>navigate ('/profile')} />
+        <img className='white' src={user} alt="" onClick={()=>(navigate('/profile'))} />
       </div>
       
     </div>
