@@ -161,7 +161,6 @@ const Search = () => {
               <li>{getRuntime (movie.Runtime)}</li>
               <li>U/A 13+</li>
             </ul>
-            <p>{movie.Plot}</p>
           </div>
         </div>))}
       </div>}

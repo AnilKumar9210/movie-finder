@@ -18,10 +18,10 @@ function App() {
       <div className='main-content' style={{height:100+'vh',background:'black'}}>
       <Routes>
         <Route path='/' element={<Onboarding/>}/>
-        <Route path='/login' element={<Login/>}/>
-        <Route path='/home' element={<Home/>}/>
-        <Route path='/search' element={<Search/>}/>
-        <Route path='/profile' element={<Profile/>}/>
+        <Route path='/home/login' element={<Login/>}/>
+        <Route path='/home/home' element={<Home/>}/>
+        <Route path='/home/search' element={<Search/>}/>
+        <Route path='/home/profile' element={<Profile/>}/>
       </Routes>
       </div>}
   </>)

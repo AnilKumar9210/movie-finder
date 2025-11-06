@@ -61,6 +61,7 @@
 }
 
 .result-item {
+  color: white;
   display: flex;
   gap: 27px;
   margin: 10px;
@@ -106,9 +107,20 @@
     width: 95%;
   }
   .result-item {
-    flex-direction: column;
+  
     height: auto;
     align-items: flex-start;
+  }
+
+  .result-item img {
+    width: 120px;
+    height: 180px;
+  }
+
+  .result-item .info ul {
+    gap: 5px;
+    font-size: 12px;
+    flex-direction: column;
   }
 
   .search-box {
@@ -119,8 +131,5 @@
     padding-left: 8px;
   }
 
-  .result-item img {
-    width: 100%;
-    height: auto;
-  }
+  .
 }

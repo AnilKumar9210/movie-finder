@@ -13,8 +13,7 @@ import { useNavigate } from 'react-router-dom'
 
 const LeftSec = () => {
   const navigate = useNavigate ()
-    const { login ,setLogin } = useContext(AppContext);
-    useEffect(()=> {},[login])
+  
 
     const handleSearch = ()=> {
       navigate ('./search')
@@ -25,7 +24,7 @@ const LeftSec = () => {
     }
 
   return (
-    <div className={`${login ? 'leftSec' : 'none'}`}>
+    <div className='leftSec'>
         <div className='logo'>
         <img src={media_player} alt="" style={{width:50, height:60}} />
         </div>

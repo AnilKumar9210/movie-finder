@@ -5,6 +5,7 @@ body {
   height: 100%;
   font-family: "Host Grotesk", sans-serif;
   overflow-x:hidden ;
+  color: white;
   overflow-y: auto;
 }
 .App {
@@ -16,12 +17,7 @@ body {
   background-color: black;
   color: #ffffff;
 }
-.center {
-  display: grid;
-  grid-template-columns: 8% 92%;
-  /* position: sticky; */
-  left:0;
-}
+
 
 .main-content {
   /* margin-left: 100px; */
@@ -33,17 +29,8 @@ body {
   width: 0;
 }
 
-.center:first-child {
-  position: fixed;
-  height: 100vh;
-}
-
 @media (max-width: 768px) {
-  .center {
-    display: flex;
-    flex-direction: column;
-    grid-template-columns: 12% 80%;
-  }
+
   .main-content {
     margin-left: 0;
     order: 1;
