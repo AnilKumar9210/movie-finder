@@ -16,11 +16,11 @@ const LeftSec = () => {
   
 
     const handleSearch = ()=> {
-      navigate ('/search')
+      navigate ('./search')
     }
 
     const handleHome = ()=> {
-      navigate ('/home')
+      navigate ('./home')
     }
 
   return (
@@ -34,7 +34,7 @@ const LeftSec = () => {
         <img className='white' src={categories} alt="" />
         <img className='white' src={television} alt="" />
         <img className='white' src={love} alt="" />
-        <img className='white' src={user} alt="" onClick={()=>navigate ('./profile')} />
+        <img className='white' src={user} alt="" onClick={()=>navigate ('/profile')} />
       </div>
       
     </div>
