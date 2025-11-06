@@ -9,7 +9,7 @@ const Onboarding = () => {
   const { login,setLogin } = useContext (AppContext);
   useEffect (()=> {
     if (login) {
-      navigate ('/home')
+      navigate ('/')
     }
   },[login])
 
